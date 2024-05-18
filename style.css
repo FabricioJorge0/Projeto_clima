@@ -137,7 +137,7 @@ p{
     flex-direction: row;
 } 
 
- #map { 
+#map { 
     padding: 0;
     height: 280px;
     width: 300px;
@@ -147,4 +147,24 @@ p{
     border-radius: 5px;
     margin-left: 20px;
 
+}
+
+@media (max-width: 700px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #map{
+        margin-left: 0;
+    }
+}
+
+@media (mamax-width: 350px){
+    .resultado{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
