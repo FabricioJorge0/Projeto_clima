@@ -47,7 +47,7 @@ h1 {
 
 .resultado {
     width: 300px;
-    display: block;
+    display: none;
     border: 1px dotted #FFF;
     margin-top: 20px;
     border-radius: 5px;
@@ -141,10 +141,8 @@ p{
     padding: 0;
     height: 280px;
     width: 300px;
-    border: 1px solid white;
     width:300px;
     display: block;
-    border: 1px dotted #FFF;
     margin-top: 20px;
     border-radius: 5px;
     margin-left: 20px;
