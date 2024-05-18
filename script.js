@@ -30,17 +30,20 @@ document.querySelector('.busca').addEventListener('submit',async (event) => {
         }
 
     }else{
-
+        showWarning('Por favor digite o nome de uma cidade!!')
     }
 
 })
+var mapView = document.querySelector("#map")
 var map;
 function showMap(json){
     if(map === undefined){
         map = L.map('map').setView([json.countryLat, json.countryLon], 13);
+        mapView.style.display = "block"
     }else{
         map.remove()
         map = L.map('map').setView([json.countryLat, json.countryLon], 13);
+        mapView.style.display = "block"
     }
     
 
@@ -68,4 +71,5 @@ function showInfo(json){
 function showWarning(msg){
     document.querySelector('.aviso').innerHTML = msg
     document.querySelector('.resultado').style.display = 'none'
+    mapView.style.display = "none"
 }
