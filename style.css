@@ -47,7 +47,7 @@ h1 {
 
 .resultado {
     width: 300px;
-    display: none;
+    display: block;
     border: 1px dotted #FFF;
     margin-top: 20px;
     border-radius: 5px;
@@ -128,5 +128,25 @@ p{
     margin-left: 50px;
     margin-top: -20px;
     color: white;
+
+}
+
+.container{
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+} 
+
+ #map { 
+    padding: 0;
+    height: 280px;
+    width: 300px;
+    border: 1px solid white;
+    width:300px;
+    display: block;
+    border: 1px dotted #FFF;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
 
 }

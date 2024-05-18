@@ -17,7 +17,12 @@ document.querySelector('.busca').addEventListener('submit',async (event) => {
                 tempIcon: json.weather[0].icon,
                 tempDescription: json.weather[0].description,
                 windSpeed: json.wind.speed,
-                windAngle: json.wind.deg
+                windAngle: json.wind.deg,
+                
+            })
+            showMap({
+                countryLat: json.coord.lat,
+                countryLon: json.coord.lon
             })
         }else{
             showWarning('Não encontramos esta localização...')
@@ -27,7 +32,26 @@ document.querySelector('.busca').addEventListener('submit',async (event) => {
     }else{
 
     }
+
 })
+var map;
+function showMap(json){
+    if(map === undefined){
+        map = L.map('map').setView([json.countryLat, json.countryLon], 13);
+    }else{
+        map.remove()
+        map = L.map('map').setView([json.countryLat, json.countryLon], 13);
+    }
+    
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([json.countryLat, json.countryLon]).addTo(map)
+        .bindPopup('Localização da cidade')
+        .openPopup();
+}
 
 function showInfo(json){
     showWarning('');

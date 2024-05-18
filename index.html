@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
     <h1>Clima</h1>
@@ -15,25 +22,34 @@
         <button>Buscar</button>
     </form>
 
-    <div class="resultado">
-        <div class="titulo">--</div>
+    <div class="container">
+        <div class="resultado">
+            <div class="titulo">--</div>
 
-        <div class="info">
-            <div class="temp">
-                <div class="tempTitulo">Temperatura</div>
-                <div class="tempInfo">-- <sup>ºC</sup></div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png"/>
-                <p id="descricao"></p>
-            </div>
-            <div class="vento">
-                <div class="ventoTitulo">Vento</div>
-                <div class="ventoInfo">-- <span>km/h</span></div>
-                <div class="ventoArea">
-                    <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+            <div class="info">
+                <div class="temp">
+                    <div class="tempTitulo">Temperatura</div>
+                    <div class="tempInfo">-- <sup>ºC</sup></div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png"/>
+                    <p id="descricao"></p>
+                </div>
+                <div class="vento">
+                    <div class="ventoTitulo">Vento</div>
+                    <div class="ventoInfo">-- <span>km/h</span></div>
+                    <div class="ventoArea">
+                        <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+                    </div>
                 </div>
             </div>
+
+            
+
         </div>
+
+        <div id="map"></div>
     </div>
+
+    
 
     <div class="aviso"></div>
 
